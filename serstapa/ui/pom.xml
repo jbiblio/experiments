@@ -1,18 +1,40 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>de.jbiblio</groupId>
-    <artifactId>serstapa</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>de.jbiblio.serstapa</groupId>
-  <artifactId>ui</artifactId>
-  <name>Service Status Page - User Interface</name>
-  <dependencies>
-  	<dependency>
-  		<groupId>de.jbiblio.serstapa</groupId>
-  		<artifactId>api</artifactId>
-  		<version>${project.version}</version>
-  	</dependency>
-  </dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>de.jbiblio</groupId>
+		<artifactId>serstapa</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>de.jbiblio.serstapa</groupId>
+	<artifactId>ui</artifactId>
+	<name>Service Status Page - User Interface</name>
+	<dependencies>
+		<dependency>
+			<groupId>de.jbiblio.serstapa</groupId>
+			<artifactId>api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<packaging>war</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.0.4.v20130625</version>
+				<configuration>
+					<scanIntervalSeconds>30</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/status</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
