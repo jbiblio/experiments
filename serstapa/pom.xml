@@ -37,9 +37,4 @@
 		</dependency>
 	</dependencies>
 
-	<modules>
-		<module>ui</module>
-		<module>restapi</module>
-		<module>api</module>
-	</modules>
 </project>

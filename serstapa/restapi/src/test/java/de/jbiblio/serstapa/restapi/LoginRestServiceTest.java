@@ -9,6 +9,7 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.Is;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class LoginRestServiceTest {
@@ -29,6 +30,7 @@ public class LoginRestServiceTest {
 	}
 	
 	@Test
+	@Ignore
 	public void testLogin() {
 		String response = target.path("login").request().get(String.class);
 		
