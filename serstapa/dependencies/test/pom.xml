@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.jbiblio.serstapa.deps</groupId>
   <artifactId>test</artifactId>
-  <version>1.0.0-junit4.11</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Dependency - Test</name>
   <dependencies>
