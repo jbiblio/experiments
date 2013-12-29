@@ -8,6 +8,14 @@
 	<artifactId>restapi</artifactId>
 	<name>Service Status Page - REST API</name>
 
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
 	<repositories>
 		<repository>
 			<id>snapshot-repository.java.net</id>
@@ -78,4 +86,5 @@
 	</build>
 
 	<version>0.0.1-SNAPSHOT</version>
+	<description>A REST implementation of the serstapa/API package.</description>
 </project>

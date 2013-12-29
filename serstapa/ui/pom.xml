@@ -32,4 +32,7 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
+	<description>The user interface of serstapa.
+
+Uses AngularJS to build the UI.</description>
 </project>
