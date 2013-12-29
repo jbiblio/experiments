@@ -1,0 +1,15 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.jbiblio.serstapa</groupId>
+  <artifactId>settings</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Service Status Page - Settings</name>
+  <description>Defines some common properties.</description>
+  <properties>
+  	<jetty.version>9.1.0.v20131115</jetty.version>
+  	<java.source.version>1.7</java.source.version>
+  	<java.target.version>1.7</java.target.version>
+  	<java.source.encoding>utf-8</java.source.encoding>
+  </properties>
+</project>
