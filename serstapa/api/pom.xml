@@ -37,4 +37,11 @@ Contains the interfaces that are provided by serstapa.</description>
 		<artifactId>settings</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>de.jbiblio.serstapa</groupId>
+			<artifactId>model</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>
