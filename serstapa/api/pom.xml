@@ -6,8 +6,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>api</artifactId>
 	<name>Service Status Page - API</name>
-	<groupId>de.jbiblio.serstapa</groupId>
-	<version>0.0.1-SNAPSHOT</version>
 
 	<licenses>
 		<license>
@@ -24,9 +22,9 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-					<encoding>utf-8</encoding>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
+					<encoding>${java.source.encoding}</encoding>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -34,4 +32,9 @@
 	<description>API definitions of Service Status Page.
 
 Contains the interfaces that are provided by serstapa.</description>
+	<parent>
+		<groupId>de.jbiblio.serstapa</groupId>
+		<artifactId>settings</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 </project>
