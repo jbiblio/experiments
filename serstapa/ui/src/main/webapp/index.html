@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html data-ng-app="serstapa">
 <head>
+<!-- 
 <link
 	rel="stylesheet"
 	href="style/reset.css"
 />
+-->
 <title>Service Status Page</title>
 </head>
 
-<body>
+<body data-ng-controller="ServicesController">
 	<header>
 		<hgroup>
 			<h1>Service Status Page</h1>
@@ -18,7 +20,7 @@
 				<li>
 					Services
 					<ul>
-						<li>Service 1</li>
+						<li data-ng-repeat="service in services">{{ service.name }}</li>
 					</ul>
 				</li>
 				<li>Login</li>
@@ -26,15 +28,15 @@
 		</nav>
 	</header>
 	<section>
-		<article>
-			<h3>Service 1</h3>
-			<p>Current status: Online</p>
+		<article data-ng-repeat="service in services">
+			<h3>{{ service.name }}</h3>
+			<p>Current status: {{ service.status }}</p>
 		</article>
 	</section>
 	<aside>
 		<section>
 			<h3>Overview</h3>
-			<p>Service 1: Online</p>
+			<p data-ng-repeat="service in services">{{ service.name }}: {{ service.status }}</p>
 		</section>
 		<section>
 			<h3>Angular Test</h3>
