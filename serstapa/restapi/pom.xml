@@ -38,6 +38,11 @@
 			<version>2.5</version>
 		</dependency>
 		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
 			<groupId>org.glassfish.grizzly</groupId>
 			<artifactId>grizzly-http-server</artifactId>
 			<version>2.3.8</version>
@@ -88,4 +93,5 @@
 		<artifactId>settings</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	<packaging>war</packaging>
 </project>
