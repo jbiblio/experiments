@@ -4,8 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 >
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.jbiblio.serstapa.build</groupId>
-	<artifactId>war</artifactId>
+	<artifactId>build-war</artifactId>
 	<packaging>war</packaging>
 	<name>Build - WAR</name>
 	<description>Assembles a WAR for deployment</description>
@@ -36,8 +35,8 @@
 			<type>war</type>
 		</dependency>
 		<dependency>
-			<groupId>de.jbiblio.serstapa.api</groupId>
-			<artifactId>restapi</artifactId>
+			<groupId>de.jbiblio.serstapa</groupId>
+			<artifactId>api-rest</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
