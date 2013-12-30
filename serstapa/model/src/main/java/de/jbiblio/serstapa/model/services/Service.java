@@ -1,4 +1,4 @@
-package de.jbiblio.serstapa.model;
+package de.jbiblio.serstapa.model.services;
 
 import java.util.UUID;
 
