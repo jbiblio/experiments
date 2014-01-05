@@ -15,42 +15,83 @@
  */
 package de.jbiblio.serstapa.restapi;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Application;
+import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.ext.MessageBodyReader;
 
-import org.glassfish.grizzly.http.server.HttpServer;
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.core.Is;
-import org.junit.After;
-import org.junit.Before;
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.test.JerseyTest;
+import org.glassfish.jersey.test.TestProperties;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class LoginRestServiceTest {
+import de.jbiblio.serstapa.model.services.Service;
 
-	private HttpServer server;
-	private WebTarget target;
+public class LoginRestServiceTest extends JerseyTest {
 
-	@Before
-	public void setUp() {
-		server = HttpServer.createSimpleServer();
-		Client c = ClientBuilder.newClient();
-		target = c.target("http://localhost:8080/status/api/rest");
+	@Consumes(MediaType.APPLICATION_JSON) 
+	private final class ServiceTestMessageBodyReader implements
+			MessageBodyReader<List<Service>> {
+		@Override
+		public boolean isReadable(Class<?> type, Type genericType,
+				Annotation[] annotations, MediaType mediaType) {
+			return true;
+		}
+
+		@Override
+		public List<Service> readFrom(Class<List<Service>> type,
+				Type genericType, Annotation[] annotations,
+				MediaType mediaType,
+				MultivaluedMap<String, String> httpHeaders,
+				InputStream entityStream) throws IOException,
+				WebApplicationException {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	}
-	
-	@After
-	public void tearDown() {
-		server. shutdown();
+
+	@Override
+	protected Application configure() {
+		enable(TestProperties.LOG_TRAFFIC);
+		enable(TestProperties.DUMP_ENTITY);
+		return new RestApi();
 	}
-	
+
+	@Override
+	protected void configureClient(ClientConfig config) {
+		super.configureClient(config);
+		config.register(new ServiceTestMessageBodyReader());
+	}
+
 	@Test
 	@Ignore
-	public void testLogin() {
-		String response = target.path("login").request().get(String.class);
-		
-		MatcherAssert.assertThat(response, Is.is("OK"));
+	public void testServices() {
+		WebTarget target;
+		Client c = ClientBuilder.newClient();
+		target = c.target("http://localhost:8080/restapi");
+		List<Service> response = target.path("services").request()
+				.accept(MediaType.APPLICATION_JSON)
+				.acceptEncoding(StandardCharsets.UTF_8.name())
+				.get(new GenericType<List<Service>>() {
+				});
+
+		assertThat(response.isEmpty(), is(false));
 	}
-	
-	
 }
