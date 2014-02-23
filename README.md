@@ -9,4 +9,4 @@ But nonetheless, feel free to use any of the contents under the terms of the Apa
 ## serstapa
 With [**Ser**vice **Sta**tus **Pa**ge](serstapa) I'll try to gain some basic knowledge about AngularJS, maven and JAX-RS.
 
-The goal is to build some kind of a dashboard to maintain publish information about services, like availability, outages etc. Think about [Twittter API Health Page](https://dev.twitter.com/status).
+The goal is to build some kind of a dashboard to maintain and publish information about services, like availability, outages etc. Think about [Twittter API Health Page](https://dev.twitter.com/status).
